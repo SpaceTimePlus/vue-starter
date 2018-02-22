@@ -1,6 +1,6 @@
-# Wechat vue
+# Vue starter
 
-> A Vue.js project for wechat
+> A Vue.js project
 
 ## 技术栈
 
@@ -40,7 +40,7 @@ npm test
  * [localforage](https://github.com/localForage/localForage)  本地存储
  * [mint-ui](https://github.com/ElemeFE/mint-ui)  UI
  * [vux](https://github.com/airyland/vux)   UI及微信相关
- 
+
 
 
 # 项目布局
