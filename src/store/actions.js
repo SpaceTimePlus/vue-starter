@@ -6,7 +6,14 @@ import * as commonService from '../services/commonService'
 import {isNull} from '../utils/ValUtils'
 // import localforage from 'localforage'
 
-// 微信
+
+// 更新状态
+export const updateState = async ({ commit }, payload) => {
+  // commit 到 mutation，
+  commit(mutationType.UPDATE_STATE, {obj: payload.obj, prop: payload.prop, value: payload.value})
+}
+
+// 微信 =====================================================================================================================
 // 获取微信js接口权限
 export const wxValidate = async ({ commit }, payload) => {
   // 异步获取远程数据
