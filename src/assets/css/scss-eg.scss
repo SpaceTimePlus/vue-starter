@@ -1,0 +1,76 @@
+/* 变量使用示例 */
+/*项目字体*/
+$font: Microsoft YaHei;
+/*项目主要颜色*/
+$color: #2896ff;
+
+/*选择器继承使用示例*/
+.extend-class { margin: 10px 5px; padding:2px; }
+extend-test {
+  @extend .extend-class; /*继承.block选择器下所有样式*/
+  border: 1px solid #eee;
+}
+extend-test2 {
+  @extend %extend-class; /*继承.block选择器下所有样式*/
+  border: 1px solid #eee;
+}
+
+
+/*mixin 使用示例*/
+@mixin error($borderWidth:2px){
+  border: $borderWidth solid #f00; color: #f00;
+}
+.login-error {
+  @include error(3px);
+}
+
+/* sass可以使用运算符 + - * /  */
+
+/* Sass 拓展了 @import的功能，允许其导入 SCSS 或 Sass 文件。 */
+
+
+/* 控制指令 */
+
+/* if指令 */
+p {
+  @if 1 + 1 == 2 { border: 1px solid; }
+  @if 5 < 3 { border: 2px dotted; }
+  @if null { border: 3px double; }
+}
+
+/* 函数指令 */
+@for $i from 1 through 3 {
+  .item-#{$i} { width: 2em * $i; }
+}
+
+/* each指令 */
+@each $animal in puma, sea-slug, egret, salamander {
+  .#{$animal}-icon { background-image: url('/images/#{$animal}.png'); }
+}
+
+/* while指令 */
+$i: 6; @while $i > 0 {
+  .item-#{$i} { width: 2em * $i; } $i: $i - 2;
+}
+
+/* 函数指令 */
+$grid-width: 40px; $gutter-width: 10px;
+@function grid-width($n) {
+  @return $n * $grid-width + ($n - 1) * $gutter-width;
+}
+#sidebar { width: grid-width(5); }
+
+
+
+/* 为便于书写，@mixin可以用 =表示，而 @include可以用 +表示 */
+
+
+/*函数指令*/
+$grid-width: 40px;
+$gutter-width: 10px;
+@function grid-width($n) {
+  @return $n * $grid-width + ($n - 1) * $gutter-width;
+}
+#sidebar {
+  width: grid-width(5);
+}
