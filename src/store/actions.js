@@ -3,7 +3,7 @@
  */
 import * as mutationType from '../common/mutationType'
 import * as commonService from '../services/commonService'
-import {isNull} from '../utils/ValUtils'
+import {isNull, returnResponse} from '../utils/ValUtils'
 // import localforage from 'localforage'
 
 // 更新状态

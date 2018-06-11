@@ -26,3 +26,18 @@ export function getUrlVars () {
   }
   return vars
 }
+
+// 接口返回 json 数据处理
+async function returnResponse(result, containsHead) {
+  result = await result
+
+  if (containsHead) {
+    return result
+  }
+  if (result && result.head.code === 1) {
+    return result.body.data
+  } else {
+    // 返回数据有误
+    console.log('返回数据错误')
+  }
+}
