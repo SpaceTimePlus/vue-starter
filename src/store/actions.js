@@ -6,7 +6,6 @@ import * as commonService from '../services/commonService'
 import {isNull} from '../utils/ValUtils'
 // import localforage from 'localforage'
 
-
 // 更新状态
 export const updateState = async ({ commit }, payload) => {
   // commit 到 mutation，

@@ -1,8 +1,8 @@
 {
-  "name": "weiwuu-mobile",
+  "name": "vue-starter",
   "version": "1.0.0",
-  "description": "A Vue.js project for wechat",
-  "author": "liuhui <liuhui@weiwuu.net>",
+  "description": "A Vue.js project",
+  "author": "liuhui",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
