@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import App from './App'
 import router from './router'
 import store from './store'
+import { sync } from 'vuex-router-sync'
 import FastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
@@ -56,6 +57,9 @@ Object.keys(commonFilters).forEach(key => {
 
 // 离线存储配置
 localforage.config(process.env.LOCALFORAGE_CONFIG)
+
+// 路由注册到vuex
+sync(store, router)
 
 /* eslint-disable no-new */
 new Vue({
