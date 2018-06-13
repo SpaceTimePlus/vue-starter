@@ -14,6 +14,8 @@ import message from '@/common/message'
 // 模块数据
 import user from './modules/user'
 
+import createPersistedState from "vuex-persistedstate"
+
 Vue.use(Vuex)
 
 // 不要在生产环境使用严格模式, 这会严重影响应用的整体性能
@@ -27,7 +29,7 @@ const store = new Vuex.Store({
   getters,
   mutations,
   strict: debug, // true 意味着必须通过 mutation 来修改 state
-  plugins: debug ? [ createLogger() ] : [], // 是否使用日志输出
+  plugins: debug ? [ createLogger(), createPersistedState() ] : [createPersistedState()],
 
   modules: {
     user
